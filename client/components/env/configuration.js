@@ -5,11 +5,11 @@ angular.module('configuration', [])
 
     // Specifics environment properties
     ////////////////////////////////
-    env: 'production',
+    env: 'developement',
     backendHost : 'localhost',
     backendPort : '8080',
 
-    logLevel: 'warn',
+    logLevel: 'debug',
 
     // Global properties
     /////////////////////////
