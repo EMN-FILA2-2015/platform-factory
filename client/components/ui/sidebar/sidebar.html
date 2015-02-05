@@ -1,0 +1,47 @@
+<!-- Sidebar -->
+<div  ng-controller="SidebarController as SidebarCtrl">
+    <div ng-class="{'open': TemplateCtrl.toggle}" ng-cloak>
+
+        <div id="sidebar-wrapper">
+            <ul class="sidebar">
+
+                <li class="sidebar-main">
+                    <a ng-click="TemplateCtrl.toggleSidebar()">
+                        Psf-Front
+                        <span class="menu-icon glyphicon glyphicon-transfer"></span>
+                    </a>
+                </li>
+
+
+                <li class="sidebar-title"><span>NAVIGATION</span></li>
+
+                <li class="sidebar-list">
+                    <a href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+                </li>
+
+                <li class="sidebar-list">
+                    <a href="#">Registries <span class="menu-icon fa fa-table"></span></a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <div class="col-xs-4">
+                    <a href="https://github.com/EMN-FILA2-2015/" target="_blank">
+                        Github
+                    </a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="https://trello.com/b/EfeD3G32/platform-for-software-factory" target="_blank">
+                        Trello
+                    </a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="https://drive.google.com/folderview?id=0B9qAl9mvV0wMSTJENUx5Zmo4UTQ&usp=sharing_eid" target="_blank">
+                        Drive
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Sidebar -->

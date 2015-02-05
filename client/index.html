@@ -13,12 +13,15 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/rdash-ui/dist/css/rdash.css" />
+      <link rel="stylesheet" href="bower_components/rdash-ui/dist/css/rdash.min.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
       <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="components/ui/sidebar/sidebar.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
@@ -28,7 +31,14 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view=""></div>
+
+    <div ng-include="'components/ui/navbar/navbar.html'"></div>
+    <div ng-controller="TemplateController as TemplateCtrl">
+      <div id="page-wrapper" ng-class="{'open': TemplateCtrl.toggle}" ng-cloak>
+        <div ng-include="'components/ui/sidebar/sidebar.html'"></div>
+        <div ui-view=""></div>
+      </div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -68,6 +78,8 @@
           <script src="components/env/configuration.js"></script>
           <script src="components/ui/modal/modal.service.js"></script>
           <script src="components/ui/navbar/navbar.controller.js"></script>
+          <script src="components/ui/sidebar/sidebar.controller.js"></script>
+          <script src="components/ui/template/templateController.js"></script>
           <script src="components/utils/logger.js"></script>
           <script src="services/hello/hello.service.js"></script>
           <!-- endinjector -->
