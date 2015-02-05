@@ -1,1 +1,21 @@
 <h1>{{'REGISTRIES_TITLE' | translate}}</h1>
+<table class="table table-striped">
+    <thead>
+        <th>{{'REGISTRIES_ID'         | translate}}</th>
+        <th>{{'REGISTRIES_NAME'       | translate}}</th>
+        <th>{{'REGISTRIES_TYPE'       | translate}}</th>
+        <th>{{'REGISTRIES_HOST'       | translate}}</th>
+        <th>{{'REGISTRIES_PORT'       | translate}}</th>
+        <th>{{'REGISTRIES_PROTOCOLE'  | translate}}</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="registry in regs.registries track by $index">
+            <td>{{registry.id}}</td>
+            <td>{{registry.name}}</td>
+            <td>{{registry.type}}</td>
+            <td>{{registry.host}}</td>
+            <td>{{registry.port}}</td>
+            <td>{{registry.protocole}}</td>
+        </tr>
+    </tbody>
+</table>
