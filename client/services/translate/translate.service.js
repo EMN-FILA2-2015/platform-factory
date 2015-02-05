@@ -1,11 +1,14 @@
 (function() {
     "use strict";
 
-    var english_translation = {'MESSAGE' : 'Hello world'
+    var english_translation = {
+        'MESSAGE' : 'Hello world',
+        'REGISTRIES_TITLE' : 'Registries'
     };
 
     var french_translation = {
-        'MESSAGE' : 'Bonjour le monde'
+        'MESSAGE' : 'Bonjour le monde',
+        'REGISTRIES_TITLE' : 'Registres'
     };
 
     angular
