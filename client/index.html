@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
       <link rel="stylesheet" href="app/app.css">
-      <link rel="stylesheet" href="components/ui/sidebar/sidebar.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
@@ -32,10 +31,11 @@
 
     <!-- Add your site or application content here -->
 
-    <div ng-include="'components/ui/navbar/navbar.html'"></div>
+
     <div ng-controller="TemplateController as TemplateCtrl">
       <div id="page-wrapper" ng-class="{'open': TemplateCtrl.toggle}" ng-cloak>
         <div ng-include="'components/ui/sidebar/sidebar.html'"></div>
+        <div ng-include="'components/ui/navbar/navbar.html'"></div>
         <div ui-view=""></div>
       </div>
     </div>

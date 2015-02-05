@@ -1,15 +1,28 @@
-'use strict';
+(function () {
+    "use strict";
 
-angular.module('psfApp')
-  .controller('NavbarCtrl', function ($scope, $location) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }];
+    angular
+        .module('psfApp')
+        .controller('NavbarController', NavbarController);
 
-    $scope.isCollapsed = true;
+    NavbarController.$inject = ['Logger'];
 
-    $scope.isActive = function(route) {
-      return route === $location.path();
-    };
-  });
+    function NavbarController(Logger) {
+        /* jshint validthis: true */
+        var vm = this;
+        var logger = Logger.getInstance('NavbarController');
+
+
+        activate();
+
+
+        ////////////////
+
+        function activate() {
+            logger.debug('activate()','Controller activated');
+        }
+
+
+    }
+
+})();

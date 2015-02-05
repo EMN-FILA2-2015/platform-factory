@@ -1,22 +1,61 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
-  <div class="container">
-    <div class="navbar-header">
-      <img src="assets/images/yeoman.png" alt="Title" style="width:50px;filter: grayscale(100%);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);">
-      &nbsp; &nbsp; &nbsp;
-      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">MyAPP</a>
+<!-- Header Bar -->
+<div  ng-controller="NavbarController as NavbarCtrl">
+    <div class="row header">
+        <div class="col-xs-12">
+            <div class="user pull-right">
+                <div class="item dropdown">
+                    <a ui-sref="main" class="dropdown-toggle">
+                        <img src="assets/images/yeoman.png">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">
+                            Joe Bloggs
+                        </li>
+                        <li class="divider"></li>
+                        <li class="link">
+                            <a ui-sref="main">
+                                {{'NAVBAR_LOGIN_PROFILE'  | translate}}
+                            </a>
+                        </li>
+                        <li class="link">
+                            <a ui-sref="main">
+                                {{'NAVBAR_LOGIN_SETTINGS'  | translate}}
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="link">
+                            <a ui-sref="main">
+                                {{'NAVBAR_LOGIN_LOGOUT'  | translate}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="fa fa-bell-o"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">
+                            {{'NAVBAR_NOTIFICATIONS_TITLE'  | translate}}
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                {{'NAVBAR_NOTIFICATIONS_SERVERSTATE'  | translate}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="meta">
+                <div class="page">
+                    {{'NAVBAR_TITLE'  | translate}}
+                </div>
+                <div class="breadcrumb-links">
+                    {{'NAVBAR_SUBTITLE'  | translate}}
+                </div>
+            </div>
+        </div>
     </div>
-    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-href="{{item.link}}">{{item.title}}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
 </div>
+<!-- End Header Bar -->
