@@ -8,7 +8,7 @@
                 .state('registries', {
                     url: '/registries',
                     templateUrl: 'app/registries/registries.html',
-                    controller: 'RegistriesController as regs'
+                    controller: 'RegistriesController as registriesCtrl'
                 });
         });
 })();

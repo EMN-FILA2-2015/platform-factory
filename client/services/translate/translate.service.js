@@ -4,7 +4,6 @@
     var english_translation = {
         'MESSAGE' : 'Hello world',
         'REGISTRIES_TITLE' : 'Registries',
-        'REGISTRIES_ID' : 'Id',
         'REGISTRIES_NAME' : 'Name',
         'REGISTRIES_TYPE' : 'Type',
         'REGISTRIES_HOST' : 'Host',
@@ -15,7 +14,6 @@
     var french_translation = {
         'MESSAGE' : 'Bonjour le monde',
         'REGISTRIES_TITLE' : 'Registres',
-        'REGISTRIES_ID' : 'Id',
         'REGISTRIES_NAME' : 'Nom',
         'REGISTRIES_TYPE' : 'Type',
         'REGISTRIES_HOST' : 'Hôte',
