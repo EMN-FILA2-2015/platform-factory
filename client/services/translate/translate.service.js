@@ -22,12 +22,10 @@
     };
 
     angular
-        .module('translate', ['pascalprecht.translate'])
-        .config(function($translateProvider) {
+        .module('translate', ['pascalprecht.translate', 'configuration'])
+        .config(function($translateProvider, Configuration) {
             $translateProvider.translations('en', english_translation);
             $translateProvider.translations('fr', french_translation);
-            $translateProvider.preferredLanguage('fr');
+            $translateProvider.preferredLanguage(Configuration.defaultLanguage);
         });
-
-
 })();
