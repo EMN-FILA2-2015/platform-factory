@@ -10,8 +10,8 @@
     /* @ngInject */
     function RegistryService(Restangular, Logger) {
 
-        var logger = Logger.getInstance('MainController');
-        var service = Restangular.all('registries');
+        var logger = Logger.getInstance('RegistryService');
+        var service = Restangular.service('registries');
 
         return {
             getRegistries: getRegistries

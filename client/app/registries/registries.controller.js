@@ -7,7 +7,7 @@
 
     RegistriesController.$inject = ['RegistryService', 'Configuration', 'Logger'];
 
-    function RegistriesController(Configuration, Logger, RegistryService) {
+    function RegistriesController(RegistryService, Configuration, Logger) {
         /* jshint validthis: true */
         var vm = this;
         var logger = Logger.getInstance('RegistriesController');
@@ -24,6 +24,7 @@
 
         function initRegistries() {
             logger.debug('initRegistries()','Controller activated');
+            vm.registries = [{'name' : 'lol'}];
             RegistryService.getRegistries()
                 .then(function(data){
                     vm.registries = data;
