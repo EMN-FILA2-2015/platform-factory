@@ -19,16 +19,22 @@
         vm.registries = [
             {
                 "id" : 1,
-                "name" : "Registery 1",
-                "type" : "Docker",
+                "name" : "Registry 1",
+                "type" : {
+                    nom: "Docker",
+                    logo: "assets/images/icons/docker.png"
+                },
                 "host" : "localhost",
                 "port" : "9000",
                 "protocole" : "http"
             },
             {
                 "id" : 2,
-                "name" : "Registery 2",
-                "type" : "Docker",
+                "name" : "Registry 2",
+                "type" : {
+                    nom: "Docker",
+                    logo: "assets/images/icons/docker.png"
+                },
                 "host" : "localhost",
                 "port" : "9000",
                 "protocole" : "https"

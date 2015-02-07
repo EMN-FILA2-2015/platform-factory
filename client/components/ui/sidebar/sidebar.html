@@ -20,7 +20,22 @@
             </li>
 
             <li class="sidebar-list">
-                <a ui-sref="registries"> {{'SIDEBAR_REGISTRIES'  | translate}} <span class="menu-icon fa fa-table"></span></a>
+
+                <a ng-click="SidebarCtrl.toggleRegistries()"> {{'SIDEBAR_REGISTRIES'  | translate}}
+                    <span class="menu-icon fa fa-table"></span>
+                    <span class="menu-icon fa fa-plus addRegistryIcon" ui-sref="addRegistry" ng-click="$event.stopPropagation()"></span>
+                </a>
+                <div  ng-if="SidebarCtrl.showRegistries" ng-controller="RegistriesController as RegistriesCtrl">
+                    <div class="sidebar-sublist" ng-repeat="registry in RegistriesCtrl.registries track by $index">
+                        <a ui-sref="registries">
+                            <div>
+                                <img ng-src="{{ registry.type.logo }}" alt="{{ registry.type }}" class="icons"> {{ registry.name }}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
             </li>
         </ul>
 

@@ -2,7 +2,7 @@
     "use strict";
 
     var english_translation = {
-        'APPNAME' : 'PSF-Front',
+        'APPNAME' : 'Dockland',
         'MESSAGE' : 'Hello world',
         'REGISTRIES_TITLE' : 'Registries',
         'REGISTRIES_ID' : 'Id',
@@ -16,7 +16,7 @@
         'SIDEBAR_MAIN' : 'Main',
         'SIDEBAR_REGISTRIES' : 'Registries',
         'NAVBAR_TITLE' : 'PSF-Front',
-        'NAVBAR_SUBTITLE' : 'Fil_d_ariane',
+        'NAVBAR_SUBTITLE' : 'Breadcrumbs',
         'NAVBAR_NOTIFICATIONS_TITLE' : 'Notifications',
         'NAVBAR_NOTIFICATIONS_SERVERSTATE' : 'Serveur Down',
         'NAVBAR_LOGIN_PROFILE' : 'Profile',
@@ -25,7 +25,7 @@
     };
 
     var french_translation = {
-        'APPNAME' : 'PSF-Front',
+        'APPNAME' : 'Dockland',
         'MESSAGE' : 'Bonjour le monde',
         'REGISTRIES_TITLE' : 'Registres',
         'REGISTRIES_ID' : 'Id',
@@ -38,7 +38,7 @@
         'SIDEBAR_NAVIGATION' : 'NAVIGATION',
         'SIDEBAR_MAIN' : 'Accueil',
         'SIDEBAR_REGISTRIES' : 'Registres',
-        'NAVBAR_TITLE' : 'PSF-Front',
+        'NAVBAR_TITLE' : 'Dockland',
         'NAVBAR_SUBTITLE' : 'Fil_d_ariane',
         'NAVBAR_NOTIFICATIONS_TITLE' : 'Notifications',
         'NAVBAR_NOTIFICATIONS_SERVERSTATE' : 'Serveur déconnecté',
