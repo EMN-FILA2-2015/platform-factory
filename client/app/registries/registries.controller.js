@@ -24,7 +24,6 @@
 
         function initRegistries() {
             logger.debug('initRegistries()','Controller activated');
-            vm.registries = [{'name' : 'lol'}];
             RegistryService.getRegistries()
                 .then(function(data){
                     vm.registries = data;
