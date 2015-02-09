@@ -23,6 +23,32 @@ describe('Service: RegistryService', function () {
         expect(registryService.getRegistries).not.toBeNull();
     });
 
+    it("should contain a getRegistry() function", function () {
+        expect(registryService.getRegistry).not.toBeNull();
+    });
+
+
+    it("should respond with an registry from the getRegistry()", function() {
+        var id = 1;
+
+        var registry = {
+            "id" : 1,
+            "name" : "Registery 1",
+            "type" : "Docker",
+            "host" : "localhost",
+            "port" : "9000",
+            "protocole" : "http"
+        };
+
+        httpBackend.expectGET("http://localhost:8080/registries/1").respond(registry);
+        registryService.getRegistry(id).then(function(data) {
+            expect(data.name).toBe(registry.name);
+            expect(data.type).toBe(registry.type);
+        });
+        httpBackend.flush();
+    });
+
+
     it("should respond with array of registries from the getRegistries()", function() {
         var arrayRegistries = [
             {
@@ -51,6 +77,5 @@ describe('Service: RegistryService', function () {
         });
         httpBackend.flush();
     });
-
 });
 

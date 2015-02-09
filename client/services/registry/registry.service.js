@@ -37,6 +37,23 @@
                 })
         }
 
+        /**
+         * Get a registry from an id
+         * @returns the registry corresponding (promise){*}
+         */
+        function getRegistries(id) {
+            logger.debug('call the /registries service');
+            return service.one(id)
+                .get()
+                .then(function(data) {
+                    return data;
+                })
+                .catch(function(error) {
+                    logger.error('registries/:id',"Error lors de l'appel du service REST Registry",error);
+                    throw error;
+                })
+        }
+
     }
 
 })();
