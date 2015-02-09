@@ -14,7 +14,9 @@
         var service = Restangular.service('registries');
 
         return {
-            getRegistries: getRegistries
+            getRegistries: getRegistries,
+            getRegistry: getRegistry,
+            createRegistry: createRegistry
         };
 
         //////////////////////
@@ -41,7 +43,7 @@
          * Get a registry from an id
          * @returns the registry corresponding (promise){*}
          */
-        function getRegistries(id) {
+        function getRegistry(id) {
             logger.debug('call the /registries service');
             return service.one(id)
                 .get()
@@ -50,6 +52,16 @@
                 })
                 .catch(function(error) {
                     logger.error('registries/:id',"Error lors de l'appel du service REST Registry",error);
+                    throw error;
+                })
+        }
+
+        function createRegistry(registry) {
+            logger.debug('call the /registries service');
+            return service
+                .post(registry)
+                .catch(function (error){
+                    logger.error('registries',"Error lors de l'appel du service REST Registry",error);
                     throw error;
                 })
         }

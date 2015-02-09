@@ -27,6 +27,10 @@ describe('Service: RegistryService', function () {
         expect(registryService.getRegistry).not.toBeNull();
     });
 
+    it("should contain a createRegistry() function", function () {
+        expect(registryService.createRegistry).not.toBeNull();
+    });
+
 
     it("should respond with an registry from the getRegistry()", function() {
         var id = 1;
@@ -74,6 +78,28 @@ describe('Service: RegistryService', function () {
             expect(data.length).toBe(2);
             expect(data[0].name).toBe(arrayRegistries[0].name);
             expect(data[1].name).toBe(arrayRegistries[1].name);
+        });
+        httpBackend.flush();
+    });
+
+
+    it("should respond with the status CREATED for createRegistry()", function() {
+        var registry =
+        {
+            "id" : 5,
+            "name" : "Registry 1",
+            "host" : "localhost",
+            "port" : "9000",
+            "protocol" : "http"
+        };
+
+        var responseExpected = {
+            "status" : 201
+        };
+
+        httpBackend.expectPOST("http://localhost:8080/registries", registry).respond(responseExpected);
+        registryService.createRegistry(registry).then(function(data) {
+            expect(data.status).toBe(responseExpected.status);
         });
         httpBackend.flush();
     });
