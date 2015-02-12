@@ -1,0 +1,9 @@
+{
+  "MESSAGE" : "Bonjour le monde",
+  "REGISTRIES_TITLE" : "Registres",
+  "REGISTRIES_NAME" : "Nom",
+  "REGISTRIES_TYPE" : "Type",
+  "REGISTRIES_HOST" : "Hôte",
+  "REGISTRIES_PORT" : "Port",
+  "REGISTRIES_PROTOCOLE" : "Protocole"
+}
