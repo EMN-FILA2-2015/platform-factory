@@ -16,7 +16,8 @@
         return {
             getRegistries: getRegistries,
             getRegistry: getRegistry,
-            createRegistry: createRegistry
+            createRegistry: createRegistry,
+            setRegistry: setRegistry
         };
 
         //////////////////////
@@ -56,12 +57,35 @@
                 })
         }
 
+        /**
+         * Create a new registry
+         * @param registry to insert
+         * @returns the registry inserted
+         */
         function createRegistry(registry) {
             logger.debug('call the /registries service');
             return service
                 .post(registry)
+                .then(function(data) {
+                    return data;
+                })
                 .catch(function (error){
                     logger.error('registries',"Error lors de l'appel du service REST Registry",error);
+                    throw error;
+                })
+        }
+
+        /**
+         * Modify a registry
+         * @param id
+         * @param registry
+         */
+        function setRegistry(id, registry) {
+            logger.debug('call the /registries service');
+            return service.one(id)
+                .put(registry)
+                .catch(function(error){
+                    logger.error('registries/:id',"Error lors de l'appel du service REST Registry",error);
                     throw error;
                 })
         }

@@ -31,6 +31,10 @@ describe('Service: RegistryService', function () {
         expect(registryService.createRegistry).not.toBeNull();
     });
 
+    it("should contain a setRegistry() function", function () {
+        expect(registryService.setRegistry).not.toBeNull();
+    });
+
 
     it("should respond with an registry from the getRegistry()", function() {
         var id = 1;
@@ -86,7 +90,6 @@ describe('Service: RegistryService', function () {
     it("should respond with the status CREATED for createRegistry()", function() {
         var registry =
         {
-            "id" : 5,
             "name" : "Registry 1",
             "host" : "localhost",
             "port" : "9000",
@@ -94,6 +97,10 @@ describe('Service: RegistryService', function () {
         };
 
         var responseExpected = {
+            "name" : "Registry 1",
+            "host" : "localhost",
+            "port" : "9000",
+            "protocol" : "http",
             "status" : 201
         };
 
@@ -103,5 +110,26 @@ describe('Service: RegistryService', function () {
         });
         httpBackend.flush();
     });
+
+    it("should respond with the status OK for setRegistry()", function() {
+        var registry =
+        {
+            "name" : "Registry 1",
+            "host" : "localhost",
+            "port" : "9000",
+            "protocol" : "http"
+        };
+
+        var responseExpected = {
+            "status" : 200
+        };
+
+        httpBackend.expectPUT("http://localhost:8080/registries/1", registry).respond(responseExpected);
+        registryService.setRegistry(1, registry).then(function(data) {
+            expect(data.status).toBe(responseExpected.status);
+        });
+        httpBackend.flush();
+    });
+
 });
 
