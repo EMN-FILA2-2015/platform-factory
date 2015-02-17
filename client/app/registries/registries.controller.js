@@ -5,9 +5,9 @@
         .module('psfApp')
         .controller('RegistriesController', RegistriesController);
 
-    RegistriesController.$inject = ['Configuration', 'Logger'];
+    RegistriesController.$inject = ['RegistryService', 'Configuration', 'Logger'];
 
-    function RegistriesController(Configuration, Logger) {
+    function RegistriesController(RegistryService, Configuration, Logger) {
         /* jshint validthis: true */
         var vm = this;
         var logger = Logger.getInstance('RegistriesController');
@@ -15,24 +15,23 @@
         vm.message = '';
         vm.currentEnv = Configuration.env;
 
-        //TODO hardcode. A remplacer par le service correspondant
-        vm.registries = [
-            {
-                "id" : 1,
-                "name" : "Registery 1",
-                "type" : "Docker",
-                "host" : "localhost",
-                "port" : "9000",
-                "protocole" : "http"
-            },
-            {
-                "id" : 2,
-                "name" : "Registery 2",
-                "type" : "Docker",
-                "host" : "localhost",
-                "port" : "9000",
-                "protocole" : "https"
-            }
-        ];
+        vm.registries;
+
+        initRegistries();
+
+
+        /////
+
+        function initRegistries() {
+            logger.debug('initRegistries()','Controller activated');
+            RegistryService.getRegistries()
+                .then(function(data){
+                    vm.registries = data;
+                    logger.debug('Retrive the data --> ' + data)
+                })
+                .catch(function(error) {
+                    logger.error('Enabled to get the list of registries.');
+                });
+        }
     }
 })();

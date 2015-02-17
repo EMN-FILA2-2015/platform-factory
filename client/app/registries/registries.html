@@ -1,21 +1,27 @@
 <h1>{{'REGISTRIES_TITLE' | translate}}</h1>
-<table class="table table-striped">
-    <thead>
-        <th>{{'REGISTRIES_ID'         | translate}}</th>
-        <th>{{'REGISTRIES_NAME'       | translate}}</th>
-        <th>{{'REGISTRIES_TYPE'       | translate}}</th>
-        <th>{{'REGISTRIES_HOST'       | translate}}</th>
-        <th>{{'REGISTRIES_PORT'       | translate}}</th>
-        <th>{{'REGISTRIES_PROTOCOLE'  | translate}}</th>
-    </thead>
-    <tbody>
-        <tr ng-repeat="registry in regs.registries track by $index">
-            <td>{{registry.id}}</td>
-            <td>{{registry.name}}</td>
+
+<div ng-if="registriesCtrl.registries.length <= 0">
+        Aucun registre n'existe pour l'instant.
+</div>
+<div ng-if="registriesCtrl.registries.length > 0">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>{{'REGISTRIES_NAME'       | translate}}</th>
+            <th>{{'REGISTRIES_TYPE'       | translate}}</th>
+            <th>{{'REGISTRIES_HOST'       | translate}}</th>
+            <th>{{'REGISTRIES_PORT'       | translate}}</th>
+            <th>{{'REGISTRIES_PROTOCOLE'  | translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="registry in registriesCtrl.registries track by $index">
+            <td><a ui-sref='registry({registryID: registry.id})' ng-href="/registries/{{registry.id}}">{{registry.name}}</a></td>
             <td>{{registry.type}}</td>
             <td>{{registry.host}}</td>
             <td>{{registry.port}}</td>
             <td>{{registry.protocole}}</td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
