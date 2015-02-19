@@ -1,9 +1,22 @@
 {
+  "APPNAME" : "PSF-Front",
   "MESSAGE" : "Bonjour le monde",
   "REGISTRIES_TITLE" : "Registres",
+  "REGISTRIES_ID" : "Id",
   "REGISTRIES_NAME" : "Nom",
   "REGISTRIES_TYPE" : "Type",
   "REGISTRIES_HOST" : "Hôte",
   "REGISTRIES_PORT" : "Port",
-  "REGISTRIES_PROTOCOLE" : "Protocole"
+  "REGISTRIES_PROTOCOLE" : "Protocole",
+  "SIDEBAR_TITLE" : "Tableau de bord",
+  "SIDEBAR_NAVIGATION" : "NAVIGATION",
+  "SIDEBAR_MAIN" : "Accueil",
+  "SIDEBAR_REGISTRIES" : "Registres",
+  "NAVBAR_TITLE" : "PSF-Front",
+  "NAVBAR_SUBTITLE" : "Fil_d_ariane",
+  "NAVBAR_NOTIFICATIONS_TITLE" : "Notifications",
+  "NAVBAR_NOTIFICATIONS_SERVERSTATE" : "Serveur déconnecté",
+  "NAVBAR_LOGIN_PROFILE" : "Profil",
+  "NAVBAR_LOGIN_SETTINGS" : "Paramètres",
+  "NAVBAR_LOGIN_LOGOUT" : "Déconnexion"
 }
