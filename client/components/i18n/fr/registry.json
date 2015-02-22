@@ -1,0 +1,15 @@
+{
+  "registry": {
+    "page": {
+      "title": "Registries",
+      "empty": "There is no registry ... add a new one"
+    },
+    "domain": {
+      "name": "Name",
+      "type": "Type",
+      "host": "Hostname",
+      "port": "Port",
+      "protocol": "Protocol"
+    }
+  }
+}

@@ -1,17 +1,17 @@
-<h1>{{'REGISTRIES_TITLE' | translate}}</h1>
+<h1>{{'registry.page.title' | translate}}</h1>
 
 <div ng-if="registriesCtrl.registries.length <= 0">
-        Aucun registre n'existe pour l'instant.
+    {{'registry.page.empty' | translate}}
 </div>
 <div ng-if="registriesCtrl.registries.length > 0">
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>{{'REGISTRIES_NAME'       | translate}}</th>
-            <th>{{'REGISTRIES_TYPE'       | translate}}</th>
-            <th>{{'REGISTRIES_HOST'       | translate}}</th>
-            <th>{{'REGISTRIES_PORT'       | translate}}</th>
-            <th>{{'REGISTRIES_PROTOCOLE'  | translate}}</th>
+            <th>{{'registry.domain.name'       | translate}}</th>
+            <th>{{'registry.domain.type'       | translate}}</th>
+            <th>{{'registry.domain.host'       | translate}}</th>
+            <th>{{'registry.domain.port'       | translate}}</th>
+            <th>{{'registry.domain.protocol'  | translate}}</th>
         </tr>
         </thead>
         <tbody>

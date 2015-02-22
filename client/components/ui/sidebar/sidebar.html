@@ -6,21 +6,23 @@
 
             <li class="sidebar-main">
                 <a ng-click="TemplateCtrl.toggleSidebar()">
-                    {{'SIDEBAR_TITLE'  | translate}} <span class="menu-icon glyphicon glyphicon-transfer"></span>
+                    {{'global.title'  | translate}}
+
+                    <span class="menu-icon glyphicon glyphicon-transfer"></span>
                 </a>
             </li>
 
 
             <li class="sidebar-title">
-                <span> {{'SIDEBAR_NAVIGATION'  | translate}} </span>
+                <span> {{'global.sidebar.navigation'  | translate}} </span>
             </li>
 
             <li class="sidebar-list">
-                <a ui-sref="main"> {{'SIDEBAR_MAIN'  | translate}} <span class="menu-icon fa fa-tachometer"></span></a>
+                <a ui-sref="main"> {{'global.sidebar.main'  | translate}} <span class="menu-icon fa fa-tachometer"></span></a>
             </li>
 
             <li class="sidebar-list">
-                <a ui-sref="registries"> {{'SIDEBAR_REGISTRIES'  | translate}} <span class="menu-icon fa fa-table"></span></a>
+                <a ui-sref="registries"> {{'global.sidebar.registries'  | translate}} <span class="menu-icon fa fa-table"></span></a>
             </li>
         </ul>
 
