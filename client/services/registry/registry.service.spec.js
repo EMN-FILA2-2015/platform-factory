@@ -1,16 +1,17 @@
 'use strict';
 
 describe('Service: RegistryService', function () {
-    var registryService, httpBackend;
+    var registryService, httpBackend, restangular;
 
     beforeEach(function() {
         module('psfApp');
         module('restangular');
     });
 
-    beforeEach(inject(function(RegistryService, $httpBackend) {
+    beforeEach(inject(function(RegistryService, $httpBackend, Restangular) {
         registryService = RegistryService;
         httpBackend = $httpBackend;
+        restangular = Restangular;
     }));
 
     ///////////// TESTS //////////////
@@ -112,20 +113,29 @@ describe('Service: RegistryService', function () {
     });
 
     it("should respond with the status OK for setRegistry()", function() {
-        var registry =
+
+        var payloadExpected =
         {
+            "id" : 1,
             "name" : "Registry 1",
             "host" : "localhost",
             "port" : "9000",
             "protocol" : "http"
         };
 
+        // Construct the Restangular object
+        var registry = restangular.one('registries',1);
+        registry.name = "Registry 1";
+        registry.host = "localhost";
+        registry.port = "9000";
+        registry.protocol = "http";
+
         var responseExpected = {
             "status" : 200
         };
 
-        httpBackend.expectPUT("http://localhost:8080/registries/1", registry).respond(responseExpected);
-        registryService.setRegistry(1, registry).then(function(data) {
+        httpBackend.expectPUT("http://localhost:8080/registries/1", payloadExpected).respond(responseExpected);
+        registryService.setRegistry(registry).then(function(data) {
             expect(data.status).toBe(responseExpected.status);
         });
         httpBackend.flush();

@@ -77,13 +77,11 @@
 
         /**
          * Modify a registry
-         * @param id
          * @param registry
          */
-        function setRegistry(id, registry) {
+        function setRegistry(registry) {
             logger.debug('call the /registries service');
-            return service.one(id)
-                .put(registry)
+            return registry.put()
                 .catch(function(error){
                     logger.error('registries/:id',"Error lors de l'appel du service REST Registry",error);
                     throw error;
